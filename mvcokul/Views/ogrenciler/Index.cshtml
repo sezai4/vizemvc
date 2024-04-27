@@ -1,0 +1,37 @@
+﻿@using mvcokul.Models.entity;
+@model List<ogrenci>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ÖĞRENCİ NO</th>
+            <th>ÖĞRENCİ ADI</th>
+            <th>ÖĞRENCİ SOYADI</th>
+            <th>BÖLÜM</th>
+            <th>MEZUNİYET</th>
+            <th>ALDIĞI KREDİ NO</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var og in Model)
+        {
+        <tr>
+            <td>@og.ogrenciid</td>
+            <td>@og.ogrenciadi</td>
+            <td>@og.ogrencisoyadi</td>
+            <td>@og.bolumid</td>
+            <td>@og.mezuniyet</td>
+            <td>@og.kredi</td>
+            <td><a href="/ogrenciler/sil/@og.ogrenciid" class="btn btn-danger">SİL</a></td>
+            <td><a href="/ogrenciler/OgrenciGetir/@og.ogrenciid" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/ogrenciler/Yeniogrenci/" class="btn btn-primary">YENİ ÖĞRENCİ EKLE</a>

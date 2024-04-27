@@ -1,0 +1,31 @@
+﻿@model mvcokul.Models.entity.ogrenci
+@{
+    ViewBag.Title = "OgrenciGetir";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "ogrenci", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.ogrenciid)
+    @Html.TextBoxFor(m => m.ogrenciid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.ogrenciadi)
+    @Html.TextBoxFor(m => m.ogrenciadi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.ogrencisoyadi)
+    @Html.TextBoxFor(m => m.ogrencisoyadi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.bolumid)
+    @Html.TextBoxFor(m => m.bolumid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.mezuniyet)
+    @Html.TextBoxFor(m => m.mezuniyet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.kredi)
+    @Html.TextBoxFor(m => m.kredi, new { @class = "form-control" })
+</div>
+    <div>
+        <button class="btn btn-warning">Öğrenci Güncelle</button>
+    </div>
+}

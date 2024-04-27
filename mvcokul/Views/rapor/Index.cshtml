@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ÖĞRENCİ NO</th>
+            <th>ÖĞRENCİ ADI</th>
+            <th>ÖĞRENCİ SOYADI</th>
+            <th>BÖLÜM</th>
+            <th>ALDIĞI KREDİ NO</th>
+            <th>MEZUNİYET</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var og in Model)
+        {
+        <tr>
+            <td>@og.ogrenciid</td>
+            <td>@og.ogrenciadi</td>
+            <td>@og.ogrencisoyadi</td>
+            <td>@og.bolumid</td>
+            <td>@og.kredi</td>
+            <td>@og.mezuniyet</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/rapor/Yeniogrenci/" class="btn btn-primary">MEZUN</a>

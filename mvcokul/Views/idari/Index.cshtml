@@ -1,0 +1,34 @@
+﻿@using mvcokul.Models.entity;
+@model List<ogretmen>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ÖĞRETMEN NO</th>
+            <th>ÖĞRETMEN ADI</th>
+            <th>ÖĞRETMEN SOYADI</th>
+            <th>EMEKLİ</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ogt in Model)
+        {
+            <tr>
+                <td>@ogt.ogretmenid</td>
+                <td>@ogt.ogretmenadı</td>
+                <td>@ogt.ogretmensoyadı</td>
+                <td>@ogt.emekli</td>
+                <td><a href="/ogrenciler/sil/@ogt.ogretmenid" class="btn btn-danger">SİL</a></td>
+                <td><a href="/ogretmen/OgretmenGetir/@ogt.ogretmenid" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/ogretmen/Yeniogretmen/" class="btn btn-primary">YENİ ÖĞRETMEN EKLE</a>
+

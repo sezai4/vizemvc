@@ -1,0 +1,23 @@
+﻿@model mvcokul.Models.entity.ogretmen
+@{
+    ViewBag.Title = "OgretmenİdariGetir";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "ogretmen", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ogretmenid)
+        @Html.TextBoxFor(m => m.ogretmenid, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ogretmenadı)
+        @Html.TextBoxFor(m => m.ogretmenadı, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ogretmensoyadı)
+        @Html.TextBoxFor(m => m.ogretmensoyadı, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Öğretmen Güncelle</button>
+    </div>
+}
+
